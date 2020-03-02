@@ -1,0 +1,16 @@
+{
+  "info": {
+    "name": "toto est 😀"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "connection": "default",
+  "collectionName": "toto_est"
+}

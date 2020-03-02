@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/toto-ests",
+      "handler": "toto-est.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/toto-ests/count",
+      "handler": "toto-est.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/toto-ests/:id",
+      "handler": "toto-est.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/toto-ests",
+      "handler": "toto-est.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/toto-ests/:id",
+      "handler": "toto-est.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/toto-ests/:id",
+      "handler": "toto-est.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
