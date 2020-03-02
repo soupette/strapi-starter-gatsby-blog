@@ -1,13 +1,13 @@
-import axios from 'axios'
+const axios = require("axios")
 
 module.exports = async ({ loginData, reporter, apiURL }) => {
   let jwtToken = null
 
   // Check if loginData is set.
   if (
-    loginData.hasOwnProperty('identifier') &&
+    loginData.hasOwnProperty("identifier") &&
     loginData.identifier.length !== 0 &&
-    loginData.hasOwnProperty('password') &&
+    loginData.hasOwnProperty("password") &&
     loginData.password.length !== 0
   ) {
     const authenticationActivity = reporter.activityTimer(
@@ -22,11 +22,11 @@ module.exports = async ({ loginData, reporter, apiURL }) => {
     try {
       const loginResponse = await axios.post(loginEndpoint, loginData)
 
-      if (loginResponse.hasOwnProperty('data')) {
+      if (loginResponse.hasOwnProperty("data")) {
         jwtToken = loginResponse.data.jwt
       }
     } catch (e) {
-      reporter.panic('Strapi authentication error: ' + e)
+      reporter.panic("Strapi authentication error: " + e)
     }
     authenticationActivity.end()
   }

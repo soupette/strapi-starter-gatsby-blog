@@ -1,9 +1,9 @@
-import axios from 'axios'
-import fetchData from './fetch'
-import { Node } from './nodes'
-import { capitalize } from 'lodash'
-import normalize from './normalize'
-import authentication from './authentication'
+const axios = require("axios")
+const fetchData = require("./fetch")
+const { Node } = require("./nodes")
+const { capitalize } = require("lodash")
+const normalize = require("./normalize")
+const authentication = require("./authentication")
 
 exports.sourceNodes = async (
   {
@@ -18,7 +18,7 @@ exports.sourceNodes = async (
     getNodesByType,
   },
   {
-    apiURL = 'http://localhost:1337',
+    apiURL = "http://localhost:1337",
     contentTypes = [],
     loginData = {},
     queryLimit = 100,
@@ -71,6 +71,7 @@ exports.sourceNodes = async (
     touchNode({ nodeId: n.id })
   })
 
+  console.log(contentTypes)
   // Create/update nodes
   contentTypes.forEach((contentType, i) => {
     const items = entities[i]
@@ -83,6 +84,8 @@ exports.sourceNodes = async (
       createNode(node)
     })
   })
+
+  console.log(newNodes)
 
   // Make a diff array between existing nodes and new ones
   const diff = existingNodes.filter(

@@ -1,6 +1,6 @@
-import axios from 'axios'
-import { isObject, startsWith, forEach } from 'lodash'
-import pluralize from 'pluralize'
+const axios = require("axios")
+const { isObject, startsWith, forEach } = require("lodash")
+const pluralize = require("pluralize")
 
 module.exports = async ({
   apiURL,
